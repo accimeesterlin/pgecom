@@ -31,9 +31,7 @@
         <figcaption class="product-card-body">
             <div class="user-inline-avatar d-flex align-items-center">
                 <div class="avatar bg-gray200">
-                    <img src="{{ $product->creator->getAvatar() }}" class="img-cover" alt="{{ $product->creator->full_name }}">
                 </div>
-                <a href="{{ $product->creator->getProfileUrl() }}" target="_blank" class="user-name ml-5 font-14">{{ $product->creator->full_name }}</a>
             </div>
 
             <a href="{{ $product->getUrl() }}">
