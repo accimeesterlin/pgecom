@@ -4,10 +4,10 @@ npm-debug.log
 .php_cs.cache
 
 # Laravel 5 & Lumen specific
-public/storage
+# public/storage
 public/hot
-storage/*.key
-storage/clockwork
+# storage/*.key
+# storage/clockwork
 .env.*.php
 .env.php
 .env
@@ -34,7 +34,7 @@ App\Repositories\Interfaces\UserRepositoryInterface
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-storage/app/*
+# storage/app/*
 /tmp/
 .vscode/settings.json
 .php-cs-fixer.cache
