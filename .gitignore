@@ -38,3 +38,5 @@ App\Repositories\Interfaces\UserRepositoryInterface
 /tmp/
 .vscode/settings.json
 .php-cs-fixer.cache
+
+.DS_Store
