@@ -116,7 +116,6 @@
                                 <div class="avatar bg-gray200">
                                 </div>
                                 <div class="d-flex flex-column ml-5">
-                                    <span class="font-weight-500 text-secondary">{{ $review->creator->full_name }}</span>
 
                                     @include(getTemplate() . '.includes.webinar.rate',[
                                             'rate' => $review->rates,
