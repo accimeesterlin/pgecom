@@ -5154,3 +5154,408 @@ INSERT INTO `notification_templates` VALUES (2,'New badge','<p>Congratulations! 
 UNLOCK TABLES;
 
 
+
+
+--
+-- Table structure for table `forum_topics`
+--
+
+DROP TABLE IF EXISTS `forum_topics`;
+CREATE TABLE IF NOT EXISTS `forum_topics` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `creator_id` int(10) UNSIGNED NOT NULL,
+  `forum_id` int(10) UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pin` tinyint(1) NOT NULL DEFAULT '0',
+  `close` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `forum_topics_slug_unique` (`slug`),
+  KEY `forum_topics_creator_id_foreign` (`creator_id`),
+  KEY `forum_topics_forum_id_foreign` (`forum_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `forum_topics`
+--
+
+INSERT INTO `forum_topics` (`id`, `creator_id`, `forum_id`, `slug`, `title`, `description`, `pin`, `close`, `created_at`) VALUES
+(1, 1015, 8, 'What-do-you-think-of-Mark-Zuckerberg', 'What do you think of Mark Zuckerberg?', '<p>I\'ll start this discussion by saying I think the way he got his start was kinda sleazy...he made a website comparing the looks of his college classmates. That site was the precursor to his most famous creation: Facebook.</p><p><br></p>', 0, 0, 1655716308),
+(2, 1015, 4, 'test', 'Bar Train Tour on Heterocera', '<p style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\">Dear Second Life residents and friends,</p><p style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\">I am pleased to announce a unique way to travel and explore the continent of Heterocera by train.</p><p style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\">The Bellisserian Bureau for Bureaucracy, the Embassies of Bellisseria and the Mainland Tour project collaborated with Greg Timmerman and his Bar &amp; Lounge project offer a special tour.</p><p style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\">Join us on the&nbsp;<span style=\"font-weight: bolder;\">Bar Train</span>&nbsp;for a journey by railway along the SLRR lines around Heterocera. We will also stop for a halt at the Woodland Station, the home of the Bar Train, where you will be able to collect a new stamp!</p>', 0, 0, 1655716703),
+(3, 1017, 4, 'Trying-to-Find-a-Water-to-Land-Race', 'Trying to Find a Water-to-Land Race!', '<p>I don\'t have a lot of info but a friend of mine told me that there is a HUD (or was) that pings GPS points on the map. And you start this race in a car, then get in a boat, then get in a car again.... and at the end, there\'s some cool party. There is NO amount of googling that is helping me find this so I\'m reaching out to the SL hivemind. Help.</p>', 0, 0, 1655787049),
+(4, 870, 10, 'Looking-for-friends-but-im-also-really-really-shy', 'Looking for friends but, im shy', '<p>Looking for friends to just hand with and have fun with. I love gaming and listening to music. I\'m 25 years young but would love to get to know some people. I started SecondLife a few months ago so I still knew. Would love to meet some genuine ppl!</p>', 0, 0, 1655788542),
+(5, 996, 5, 'How-do-you-put-a-Group-Link-in-a-note-card', 'How do you put a Group Link in a note card', '<p>I want to create a note card that lists clickable LMs (EASY to do) to the 14 music hangouts (nearly all are open stage/decks, 6 to 8 have regular weekly events) in my community region.</p><p><br></p><p>But how do you add to a notecard clickable LINKS TO GROUPS we have 6 groups which i would like to list too.</p>', 0, 0, 1655789512),
+(6, 923, 9, 'How-to-greatly-reduce-or-eliminate-networked-advertising', 'How to reduce networked advertising', '<p>We hear over and over about the evil of networked advertising on mainland, about how it is the bane of mainlanders existence, about how it should be eliminated now and forever.</p><p>But how?</p><p>We hear that networked advertising is mainly a phenomenon of micro parcels, since what else can you do with 5 prims except stick a sign on it?</p><p>Its been suggested that parcels not be allowed to be cut smaller than a certain size, but that would cause a lot of unintended consequences.</p><p>Similarly, banning the sale of micro parcels would cause also undesirable consequences.</p><p>A forum resident suggested charging each micro parcel  the equivalent of a 512 sq m tier, which is both unworkable and unfair.</p><p>My suggesting is simple, clear and fair.</p><p>I propose that Linden Labs make a new rule banning construction on any parcel under  64 sq m</p><p>Parcels under that size would only be allowed to have natural elements rezzed on them such as trees, flowers, and rocks.</p><p>As soon as this rule change is implemented, all those 16 sq m networked advertising holdings would be rendered worthless, either for use or for sale at inflated prices.</p><p>Networked advertisers could divest themselves of their holdings by offering them for sale at reasonable prices to neighboring land owners, or just abandoning them</p><p>Lets face it, no one will pay hundreds of $Ls for a 16 sq m parcel just to put a rock or shrub on.</p><p>Under this new rule, networked advertising won\'t be eliminated since it would still be legal, but I think it will certainly be greatly reduced.</p><p>Implement this suggestion, and take a giant step to beautifying the mainland by largely eliminating the \"scourge\" of networked advertising once and for all.</p><p>Note to LL, if you do implement this rule, please publish it. Don\'t just sneakily change the TOS and say gotcha.</p>', 0, 0, 1655790004),
+(7, 3, 7, 'Marketing-Agent-wanted', 'Marketing Agent wanted', '<p>I am looking for an experience and successful Marketing agent to work for me in order to increase my product sales which mostly include houses and furniture. If you are interested contact me on chat by contacting Romin McDonnell. References are required</p>', 0, 0, 1655790607),
+(8, 930, 2, 'The-best-texture-quality-settings-for-makeup', 'The best texture quality settings for makeup', '<p>Hello everyone ❣️ I don\'t know if I\'m at the right place for my question, but I hope so... 😅</p><p>In your opinion, what is the best size, dpi and the rest of the settings related to the quality of the PNG file, in order to make the texture looking great and non blurry after uploading it in SL?&nbsp;</p><p>What file format do you prefer to upload in SL - PNG or JPEG?&nbsp;</p><p>What editor/ app/ program do you use to create your textures?&nbsp;</p><p>Also, I work with Photoshop, so I would be very thankful if you can give me a few tips and tricks about the process of creation of textures exactly with this program.&nbsp;</p><p>Thank you for your time!&nbsp; Have an awesome day ☀️</p>', 0, 0, 1655790834),
+(9, 995, 3, 'What-favorite-food-and-or-beverage-do-you-enjoy', 'What favorite food and or beverage do you enjoy', '<p>I am amazed&nbsp; and thankful to SL for all the wonderful things and ability to reach&nbsp; out to others in so many different places all over the world. That being said&nbsp; at least for me as i am building ...in rl my favorite beverage&nbsp; is coffee or a mocha latte . For food prefer fruit if i am in world during lunch . How about you.<br></p>', 0, 0, 1655791192),
+(10, 995, 10, 'What-is-social-media', 'What is social media?', '<p>Social media is a collective term for websites and applications that focus on communication, community-based input, interaction, content-sharing and collaboration.</p><p><br></p><p>People use social media to stay in touch and interact with friends, family and various communities. Businesses use social applications to market and promote their products and track customer concerns.</p><p><br></p><p>Business-to-consumer websites include social components, such as comment fields for users. Various tools help businesses track, measure and analyze the attention the company gets from social media, including brand perception and customer insight.</p><p><br></p><p>Social media has enormous traction globally. Mobile applications make these platforms easily accessible. Some popular examples of general social media platforms include Twitter, Facebook and LinkedIn.</p><p><br></p><p>What are the business applications of social media?</p><p>In business, social media is used to market products, promote brands, connect to customers and foster new business. As a communication platform, social media promotes customer feedback and makes it easy for customers to share their experiences with a company. Businesses can respond quickly to positive and negative feedback, address customer problems and maintain or rebuild customer confidence.</p><p><br></p><p>Social media is also used for crowdsourcing. That\'s the practice of using social networking to gather knowledge, goods or services. Companies use crowdsourcing to get ideas from employees, customers and the general public for improving products or developing future products or services.</p>', 0, 0, 1656101498);
+
+-- --------------------------------------------------------
+
+
+
+
+
+
+
+--
+-- Table structure for table `forum_topic_attachments`
+--
+
+DROP TABLE IF EXISTS `forum_topic_attachments`;
+CREATE TABLE IF NOT EXISTS `forum_topic_attachments` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `creator_id` int(10) UNSIGNED NOT NULL,
+  `topic_id` int(10) UNSIGNED NOT NULL,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `forum_topic_attachments_topic_id_foreign` (`topic_id`),
+  KEY `forum_topic_attachments_creator_id_foreign` (`creator_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `forum_topic_attachments`
+--
+
+INSERT INTO `forum_topic_attachments` (`id`, `creator_id`, `topic_id`, `path`) VALUES
+(1, 1017, 3, '/store/1017/background-sea-water.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_topic_bookmarks`
+--
+
+DROP TABLE IF EXISTS `forum_topic_bookmarks`;
+CREATE TABLE IF NOT EXISTS `forum_topic_bookmarks` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `topic_id` int(10) UNSIGNED NOT NULL,
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `forum_topic_bookmarks_user_id_foreign` (`user_id`),
+  KEY `forum_topic_bookmarks_topic_id_foreign` (`topic_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_topic_likes`
+--
+
+DROP TABLE IF EXISTS `forum_topic_likes`;
+CREATE TABLE IF NOT EXISTS `forum_topic_likes` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `topic_id` int(10) UNSIGNED DEFAULT NULL,
+  `topic_post_id` int(10) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `forum_topic_likes_user_id_foreign` (`user_id`),
+  KEY `forum_topic_likes_topic_id_foreign` (`topic_id`),
+  KEY `forum_topic_likes_topic_post_id_foreign` (`topic_post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_topic_posts`
+--
+
+DROP TABLE IF EXISTS `forum_topic_posts`;
+CREATE TABLE IF NOT EXISTS `forum_topic_posts` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `topic_id` int(10) UNSIGNED NOT NULL,
+  `parent_id` int(10) UNSIGNED DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pin` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `forum_topic_posts_user_id_foreign` (`user_id`),
+  KEY `forum_topic_posts_topic_id_foreign` (`topic_id`),
+  KEY `forum_topic_posts_parent_id_foreign` (`parent_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `forum_topic_posts`
+--
+
+INSERT INTO `forum_topic_posts` (`id`, `user_id`, `topic_id`, `parent_id`, `description`, `attach`, `pin`, `created_at`) VALUES
+(1, 929, 2, NULL, '<p><span style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px;\">I will be there!</span><br style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px;\"><span style=\"color: rgb(89, 90, 94); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px;\">An opportunity for everyone who wants to see more of SL instead of only the clubs and beaches.</span><br></p>', NULL, 0, 1655718839),
+(2, 979, 1, NULL, '<p>Didn\'t he call his early users dumb? :o I don\'t really think about him...I find FB very boring and hard to navigate, but I can\'t persuade family members to quit it...</p><p><br></p><p>Did you know, he is being sued by a cryptocurrency developer called Internet Computer...they say he stole their logo for Meta!&nbsp;</p>', NULL, 0, 1655786658),
+(3, 930, 1, NULL, '<p>he looked after the 3,000 or so startup employees who built Facebook from nothing. When the company went public those employees share options pool was worth a combined $23billion</p>', NULL, 0, 1655786705),
+(4, 923, 3, NULL, '<p>That sounds like the weekly grid drive put on by the drivers of SL group.</p><p><br></p><p>Their headquarters is here: http://maps.secondlife.com/secondlife/Bruissac/109/72/36</p><p><br></p><p>Or maybe I could be totally off base. I know I did something that sounds exactly like what was described in the OP once with a friend over a year ago.</p>', NULL, 0, 1655787619),
+(5, 1017, 3, NULL, '<p>Thanks</p>', NULL, 0, 1655787999),
+(6, 3, 4, NULL, '<p>Hi, I\'m in SL for a little over a year and I\'m mostly on my own. I\'d like to meet friends who I could hang out with so I won\'t be alone all the time. In SL I mostly shop, modify my avi or take pictures (which I\'m not good at lol) but I\'m for anything which could be fun. In RL, I\'m from Europe. Czech or English language - if you speak slowly we can voice. I\'m a fan of Chinese costume drama and novels, pop. My active time in SL is usually during weekends - in working days I\'m usually AFK at some club while working. IM me in-world if you want.<br></p>', NULL, 0, 1655788607),
+(7, 930, 5, NULL, '<p>If it was me, who\'s really dumb about scripting, I\'d just place a group joiner for the appropriate group at each arrival point.</p>', NULL, 0, 1655789536),
+(8, 859, 5, NULL, '<p>Ah, I didn\'t understand what you meant.&nbsp; The best you can do is include a full perm object that contains a group joiner script and the UUIDs of each of the six groups.&nbsp; Then a person just has to rez the object and click it to get the joiner menu.</p><p><br></p><p>Or do as Lindal suggested, which is much easier.&nbsp; ;)</p><p><br></p>', NULL, 0, 1655789585),
+(9, 3, 6, NULL, '<p>I doubt the Lab will make any significant changes to existing Mainland rules.</p><p><br></p><p>On the other hand, they\'ve definitely moved away from allowing new land to be subdivided, joined, etc. That\'s always been the rule in Linden\'s \"urban\" zoned areas such as Bay City, Nova Albion, Nautilus City, etc., and applies to a big chunk of Zindra. Also, of course, Belli and the old Linden Homes continents, and most predictive of anything to be added in future: the Horizons continent. So, basically, they realize that virtual land is most productive when it follows the same practices as Estates, and that just doesn\'t include microparcels.</p><p><br></p><p>If they did anything, I\'d favor just banning everything under 144 sq.m. from being set for sale at all, just as they can\'t appear in Search.They were just a mistake, so let them die out as painlessly as possible.</p><p><br></p><p>Networked advertising, qua advertising, has never really been a thing. There have been a few folks who genuinely misunderstood and thought it might be a business, but that\'s never been why there are microparcels, and most microparcel-based network \"advertisers\" know darn well they couldn\'t pay to light the pixels with the eyeballs and clickthrus. It\'s always been just a cover for land extortion, with a handful of saps who mistook it for actual advertising. There\'s just no business to be had there.</p>', NULL, 0, 1655790272),
+(10, 934, 7, NULL, '<p>Hi James,</p><p><br></p><p>Love To Decorate is dedicated to showcasing the talents and impeccable design within the Home &amp; Garden design market in the virtual world of Second Life.&nbsp;</p><p><br></p><p>Through our Website, we make it our goal to inspire the residents of Second Life and give our full support to the content creators who support us and make this world a beautiful place to log into each day.</p><p><br></p><p>We would be glad to help you with marketing and advertising your brand.&nbsp;</p>', NULL, 0, 1655790650),
+(11, 929, 8, NULL, '<p style=\"\"><font color=\"#595a5e\" face=\"Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol\"><span style=\"font-size: 14px;\">To add to Orwar\'s great explanation:</span></font></p><p style=\"\"><font color=\"#595a5e\" face=\"Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol\"><span style=\"font-size: 14px;\">In the end, anything you upload to SL will become a JPEG and will lose some detail. The reason why you should save your work as PNG/TGA/PSD/etc is to keep the original quality on your computer as you made it.</span></font></p><p style=\"\"><font color=\"#595a5e\" face=\"Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol\"><span style=\"font-size: 14px;\">The difference between PNG vs TGA is that PNG is losslessly compressed (to save space without sacrificing quality), while TGA is uncompressed. Realistically it doesn\'t matter, since they have the exact same capabilities.</span></font></p>', NULL, 0, 1655790902),
+(12, 870, 8, NULL, '<p>I upload using TGA format, as I use masking in my work. Something to think about...if you use them.</p><p><br></p>', NULL, 0, 1655790940),
+(13, 996, 9, NULL, '<p>Depends on the time of day.</p><p><br></p><p>If it\'s morning, it\'s coffee. Afternoon, tea or water. Evening, water.</p><p><br></p><p>I don\'t tend to eat often while I\'m online. I\'ll wait until I finish whatever I\'m doing, then log off and take a break for a while.&nbsp;</p>', NULL, 0, 1655791222),
+(14, 1015, 9, NULL, '<p>If I’m playing this game sober then something is wrong.</p><p>Cheap alcohol, and I mean cheeaaaaap. Like plastic bottle 5$ vodka at room temperature.&nbsp;</p><p>I don’t eat when in front of the computer, makes you fat.</p>', NULL, 0, 1655791289),
+(15, 3, 9, NULL, '<p>Mugs of coffee and cubes of cheese.</p>', NULL, 0, 1655791331),
+(16, 995, 10, NULL, '<p>What are the different types of social media?</p><div><br></div>', NULL, 0, 1656101542),
+(17, 1016, 10, 16, '<p>The four main categories of social platforms are these:</p><p><br></p><p>Social networks. People use these networks to connect with one another and share information, thoughts and ideas. The focus of these networks is usually on the user. User profiles help participants identify other users with common interests or concerns. Facebook and LinkedIn are good examples.</p><p><br></p><p>Media-sharing networks. These networks focus is on content. For example, on YouTube, interaction is around videos that users create. Other media-sharing networks are TikTok and Instagram. Streaming platforms like Twitch are considered a subset of this category.</p><p><br></p><p>Community-based networks. The focus of this type of social network is in-depth discussion, much like a blog forum. Users leave prompts for discussion that spiral into detailed comment threads. Communities often form around select topics. Reddit is an example of a community-based network.</p><p><br></p><p>Review board networks. With these networks, the focus is on a review, usually of a product or service. For example, on Yelp, users can write reviews on restaurants and endorse each other\'s reviews to boost visibility.</p>', NULL, 0, 1656101670),
+(18, 870, 10, NULL, '<p>What are enterprise social media best practices?</p><div><br></div>', NULL, 0, 1656101717),
+(19, 929, 10, 18, '<p>It is important for companies to have a social media strategy and establish social media goals. These help to build trust, educate their target audience and create brand awareness. They also enable real people to find and learn about a business.<br></p>', NULL, 0, 1656101751);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_topic_reports`
+--
+
+DROP TABLE IF EXISTS `forum_topic_reports`;
+CREATE TABLE IF NOT EXISTS `forum_topic_reports` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `topic_id` int(10) UNSIGNED DEFAULT NULL,
+  `topic_post_id` int(10) UNSIGNED DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `forum_topic_reports_user_id_foreign` (`user_id`),
+  KEY `forum_topic_reports_topic_id_foreign` (`topic_id`),
+  KEY `forum_topic_reports_topic_post_id_foreign` (`topic_post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `forum_topic_reports`
+--
+
+INSERT INTO `forum_topic_reports` (`id`, `user_id`, `topic_id`, `topic_post_id`, `message`, `created_at`) VALUES
+(1, 996, NULL, 18, 'This is a spam comment.', 1656323052);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_translations`
+--
+
+DROP TABLE IF EXISTS `forum_translations`;
+CREATE TABLE IF NOT EXISTS `forum_translations` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `forum_id` int(10) UNSIGNED NOT NULL,
+  `locale` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `forum_translations_forum_id_foreign` (`forum_id`),
+  KEY `forum_translations_locale_index` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `forum_translations`
+--
+
+INSERT INTO `forum_translations` (`id`, `forum_id`, `locale`, `title`, `description`) VALUES
+(1, 1, 'en', 'Lifestyle', 'Lifestyle is the interests, opinions, behaviours, and behavioural orientations of an individual, group, or culture. The term was introduced by Austrian psychologist Alfred Adler in his 1929 book, The Case of Miss R., with the meaning of \"a person\'s basic character as established early in childhood\".'),
+(2, 2, 'en', 'Beauty & Makeup', 'How to create your natural skincare perfect'),
+(3, 3, 'en', 'Food & Beverage', 'A practical forum to take your cooking skills from dull to delicious'),
+(4, 4, 'en', 'Travel', 'How You Can Afford a Life of Travel and Adventure!'),
+(5, 5, 'en', 'Music', 'Discuss music with The World\'s Top instructors'),
+(6, 6, 'en', 'Marketing', 'Marketing is the process of exploring.'),
+(7, 7, 'en', 'Digital Marketing', 'Master Digital Marketing Strategy'),
+(8, 8, 'en', 'Public Relations', 'Everything you need to know to be successful at PR'),
+(9, 9, 'en', 'Advertising', 'Learn the inner workings of a massive digital industry'),
+(10, 10, 'en', 'Social Media', 'MASTER online marketing on Twitter, Pinterest, Instagram');
+
+-- --------------------------------------------------------
+
+
+
+
+use vr8zr4zr5j4er823;
+
+# Error Code: 1824. Failed to open the referenced table 'webinar_chapters'
+
+
+
+--
+-- Table structure for table `bundle_webinars`
+--
+
+DROP TABLE IF EXISTS `bundle_webinars`;
+CREATE TABLE IF NOT EXISTS `bundle_webinars` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `creator_id` int(10) UNSIGNED NOT NULL,
+  `bundle_id` int(10) UNSIGNED NOT NULL,
+  `webinar_id` int(10) UNSIGNED NOT NULL,
+  `order` int(10) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `bundle_webinars_bundle_id_foreign` (`bundle_id`),
+  KEY `bundle_webinars_webinar_id_foreign` (`webinar_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bundle_webinars`
+--
+
+INSERT INTO `bundle_webinars` (`id`, `creator_id`, `bundle_id`, `webinar_id`, `order`) VALUES
+(1, 1015, 1, 1998, NULL),
+(2, 1015, 1, 2008, NULL),
+(3, 1015, 1, 1996, NULL),
+(4, 1015, 1, 2009, NULL),
+(5, 934, 2, 1997, NULL),
+(6, 934, 2, 2005, NULL),
+(7, 929, 3, 2004, NULL),
+(8, 929, 3, 1999, NULL);
+
+-- --------------------------------------------------------
+
+
+
+--
+-- Table structure for table `webinar_assignments`
+--
+
+DROP TABLE IF EXISTS `webinar_assignments`;
+CREATE TABLE IF NOT EXISTS `webinar_assignments` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `creator_id` int(10) UNSIGNED NOT NULL,
+  `webinar_id` int(10) UNSIGNED NOT NULL,
+  `chapter_id` int(10) UNSIGNED NOT NULL,
+  `grade` int(10) UNSIGNED DEFAULT NULL,
+  `pass_grade` int(10) UNSIGNED DEFAULT NULL,
+  `deadline` int(10) UNSIGNED DEFAULT NULL,
+  `attempts` int(10) UNSIGNED DEFAULT NULL,
+  `check_previous_parts` tinyint(1) NOT NULL DEFAULT '0',
+  `access_after_day` int(10) UNSIGNED DEFAULT NULL,
+  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `webinar_assignments_creator_id_foreign` (`creator_id`),
+  KEY `webinar_assignments_webinar_id_foreign` (`webinar_id`),
+  KEY `webinar_assignments_chapter_id_foreign` (`chapter_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `webinar_assignments`
+--
+
+INSERT INTO `webinar_assignments` (`id`, `creator_id`, `webinar_id`, `chapter_id`, `grade`, `pass_grade`, `deadline`, `attempts`, `check_previous_parts`, `access_after_day`, `status`, `created_at`) VALUES
+(1, 929, 2010, 31, 100, 70, 180, 5, 0, NULL, 'active', 1655801119),
+(2, 1015, 2008, 34, 100, 75, 250, 1, 0, NULL, 'active', 1656407252);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webinar_assignment_attachments`
+--
+
+DROP TABLE IF EXISTS `webinar_assignment_attachments`;
+CREATE TABLE IF NOT EXISTS `webinar_assignment_attachments` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `creator_id` int(10) UNSIGNED NOT NULL,
+  `assignment_id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attach` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `webinar_assignment_attachments_assignment_id_foreign` (`assignment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `webinar_assignment_attachments`
+--
+
+INSERT INTO `webinar_assignment_attachments` (`id`, `creator_id`, `assignment_id`, `title`, `attach`) VALUES
+(3, 929, 1, 'Assignment File', '/store/929/Sample_PDF.pdf'),
+(4, 1015, 2, 'Homework File', '/store/1015/Documentation.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webinar_assignment_history`
+--
+
+DROP TABLE IF EXISTS `webinar_assignment_history`;
+CREATE TABLE IF NOT EXISTS `webinar_assignment_history` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `instructor_id` int(10) UNSIGNED NOT NULL,
+  `student_id` int(10) UNSIGNED NOT NULL,
+  `assignment_id` int(10) UNSIGNED NOT NULL,
+  `grade` int(10) UNSIGNED DEFAULT NULL,
+  `status` enum('pending','passed','not_passed','not_submitted') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `webinar_assignment_history_instructor_id_foreign` (`instructor_id`),
+  KEY `webinar_assignment_history_student_id_foreign` (`student_id`),
+  KEY `webinar_assignment_history_assignment_id_foreign` (`assignment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `webinar_assignment_history`
+--
+
+INSERT INTO `webinar_assignment_history` (`id`, `instructor_id`, `student_id`, `assignment_id`, `grade`, `status`, `created_at`) VALUES
+(1, 929, 995, 1, 80, 'passed', 1655872680),
+(2, 929, 930, 1, 75, 'passed', 1655877115),
+(3, 929, 996, 1, 50, 'not_passed', 1656219608),
+(4, 1015, 996, 2, 60, 'not_passed', 1656407301);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webinar_assignment_history_messages`
+--
+
+DROP TABLE IF EXISTS `webinar_assignment_history_messages`;
+CREATE TABLE IF NOT EXISTS `webinar_assignment_history_messages` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `assignment_history_id` int(10) UNSIGNED NOT NULL,
+  `sender_id` int(10) UNSIGNED NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` bigint(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `webinar_assignment_history_id` (`assignment_history_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `webinar_assignment_history_messages`
+--
+
+INSERT INTO `webinar_assignment_history_messages` (`id`, `assignment_history_id`, `sender_id`, `message`, `file_title`, `file_path`, `created_at`) VALUES
+(1, 2, 930, 'Hi,\r\nI attached my homework.\r\nPlease review it and inform me if it has a problem.\r\nRegards.', 'Jade Harrison Homework', '/store/930/homework.docx', 1655877736),
+(2, 2, 929, 'Hi,\r\nThank you for your answers.\r\nHave a good day.', NULL, NULL, 1655877887),
+(3, 1, 995, 'Hi, I attached my homework. Please review it and inform me if it has a problem. Regards.', 'Cameron Schofield Homework', '/store/995/homework.docx', 1655878091),
+(4, 1, 929, 'Hi,\r\nI reviewed your answers.\r\nPlease check the attached file and solve the problems.\r\nRegards.', 'Cameron Schofield Homework problems', '/store/929/Sample_PDF.pdf', 1655878235),
+(5, 1, 995, 'Hi, Thank you.\r\nI attached it again.\r\nPlease recheck it.\r\nRegards.', 'Cameron Schofield Homework fixed', '/store/995/homework.docx', 1655878364),
+(6, 1, 929, 'Thank you.', NULL, NULL, 1655878537),
+(7, 3, 996, 'Hi,\r\nI attached my answers.\r\nRegards.', 'Robert B. Gray Assignment', '/store/996/lmX4K.png', 1656219737),
+(8, 4, 996, 'Hi,\r\nI attached my homework.\r\nPlease review it.\r\nRegards.', 'my first submit', '/store/996/lmX4K.png', 1656407360);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webinar_assignment_translations`
+--
+
+DROP TABLE IF EXISTS `webinar_assignment_translations`;
+CREATE TABLE IF NOT EXISTS `webinar_assignment_translations` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `locale` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `webinar_assignment_id` int(10) UNSIGNED NOT NULL,
+  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `webinar_assignment_id_translate_foreign` (`webinar_assignment_id`),
+  KEY `webinar_assignment_translations_locale_index` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `webinar_assignment_translations`
+--
+
+INSERT INTO `webinar_assignment_translations` (`id`, `locale`, `webinar_assignment_id`, `title`, `description`) VALUES
+(1, 'en', 1, 'Students Assignment', 'Homework, or a homework assignment, is a set of tasks assigned to students by their teachers to be completed outside the classroom.\r\nThe effects of homework are debated. Generally speaking, homework does not improve academic performance among young children. Homework may improve academic skills among older students, especially lower-achieving students. However, homework also creates stress for students and parents and reduces the amount of time that students can spend on other activities.\r\n\r\nPlease send the assignments within the specified deadline.'),
+(2, 'en', 2, 'Mid-term Homework', 'A  Homework to test yourself on your grasp of CSS and reassure yourself that you\'ve got this!\r\nPlease send your homework as soon as possible.\r\nRegards.');
+
+-- --------------------------------------------------------
