@@ -184,7 +184,7 @@ return [
         KingFlamez\Rave\RaveServiceProvider::class,
 
         App\Providers\MinioStorageServiceProvider::class,
-        Gathuku\Mpesa\MpesaServiceProvider::class,
+        // Gathuku\Mpesa\MpesaServiceProvider::class,
         Ssheduardo\Redsys\RedsysServiceProvider::class,
     ],
 
