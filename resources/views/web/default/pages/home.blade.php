@@ -151,7 +151,6 @@
 
                                                     <div class="user-inline-avatar mt-15 d-flex align-items-center">
                                                         <div class="avatar bg-gray200">
-                                                            <img src="{{ $feature->webinar->teacher->getAvatar() }}" class="img-cover" alt="{{ $feature->webinar->teacher->full_naem }}">
                                                         </div>
                                                         <a href="{{ $feature->webinar->teacher->getProfileUrl() }}" target="_blank" class="user-name font-14 ml-5">{{ $feature->webinar->teacher->full_name }}</a>
                                                     </div>
@@ -780,7 +779,7 @@
                                 <div class="shadow-effect">
                                     <div class="instructors-card d-flex flex-column align-items-center justify-content-center">
                                         <div class="instructors-card-avatar">
-                                            <img src="{{ $instructor->getAvatar(108) }}" alt="{{ $instructor->full_name }}" class="rounded-circle img-cover">
+                                            <!-- <img src="{{ $instructor->getAvatar(108) }}" alt="{{ $instructor->full_name }}" class="rounded-circle img-cover"> -->
                                         </div>
                                         <div class="instructors-card-info mt-10 text-center">
                                             <a href="{{ $instructor->getProfileUrl() }}" target="_blank">
@@ -851,7 +850,7 @@
                                 <div class="swiper-slide">
                                     <div class="home-organizations-card d-flex flex-column align-items-center justify-content-center">
                                         <div class="home-organizations-avatar">
-                                            <img src="{{ $organization->getAvatar(120) }}" class="img-cover rounded-circle" alt="{{ $organization->full_name }}">
+                                            <!-- <img src="{{ $organization->getAvatar(120) }}" class="img-cover rounded-circle" alt="{{ $organization->full_name }}"> -->
                                         </div>
                                         <a href="{{ $organization->getProfileUrl() }}" class="mt-25 d-flex flex-column align-items-center justify-content-center">
                                             <h3 class="home-organizations-title">{{ $organization->full_name }}</h3>
