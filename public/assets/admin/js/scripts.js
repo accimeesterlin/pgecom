@@ -601,16 +601,6 @@ $(function () {
         });
     };
 
-    window.randomString = function (count = 5) {
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-        for (var i = 0; i < count; i++)
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-        return text;
-    };
-
     /**
      * close swl
      * */

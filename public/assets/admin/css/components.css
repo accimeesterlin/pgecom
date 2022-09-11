@@ -361,7 +361,7 @@
 
 .chat-box .chat-content .chat-item.chat-right .chat-details .chat-text {
     text-align: left;
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 
@@ -515,20 +515,20 @@ div.dataTables_wrapper div.dataTables_processing {
 }
 
 .ranges li {
-    color: var(--primary);
+    color: #6777ef;
 }
 
 .ranges li:hover, .ranges li.active {
-    background-color: var(--primary);
+    background-color: #6777ef;
 }
 
 .daterangepicker td.active, .daterangepicker td.active:hover {
-    background-color: var(--primary);
+    background-color: #6777ef;
 }
 
 /* 1.10 Dropzone */
 .dropzone {
-    border: 2px dashed var(--primary);
+    border: 2px dashed #6777ef;
     min-height: 240px;
     text-align: center;
 }
@@ -652,7 +652,7 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .fc button.fc-state-active {
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 
@@ -827,7 +827,7 @@ tr:first-child > td > .fc-day-grid-event {
     width: 13px;
     height: 13px;
     background-color: #fff;
-    border: 3px solid var(--primary);
+    border: 3px solid #6777ef;
     border-radius: 50%;
 }
 
@@ -959,7 +959,7 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .selectric-open .selectric {
-    border-color: var(--primary);
+    border-color: #6777ef;
 }
 
 .selectric-above .selectric-items, .selectric-below .selectric-items {
@@ -983,7 +983,7 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .selectric-items li.selected, .selectric-items li.highlighted {
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 
@@ -1156,7 +1156,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 .swal-button.swal-button--confirm {
     box-shadow: 0 2px 6px #acb5f6;
-    background-color: var(--primary);
+    background-color: #6777ef;
 }
 
 .swal-button.swal-button--confirm:focus {
@@ -1189,7 +1189,7 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .bootstrap-tagsinput .tag {
-    background-color: var(--primary);
+    background-color: #6777ef;
     border-radius: 3px;
     padding: 5px 10px;
 }
@@ -1386,10 +1386,10 @@ tr:first-child > td > .fc-day-grid-event {
     padding: 10px;
     line-height: 1;
     border-radius: 3px;
-    border: 2px solid var(--primary);
+    border: 2px solid #6777ef;
     font-size: 10px;
     font-weight: 500;
-    color: var(--primary);
+    color: #6777ef;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -1599,13 +1599,13 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .tickets .ticket-items .ticket-item:hover .ticket-title {
-    color: var(--primary);
+    color: #6777ef;
 }
 
 .tickets .ticket-items .ticket-item.active {
     box-shadow: 0 2px 6px #acb5f6;
     border-radius: 3px;
-    background-color: var(--primary);
+    background-color: #6777ef;
     border-bottom: none;
 }
 
@@ -1758,7 +1758,7 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .owl-theme .owl-dots .owl-dot.active span {
-    background-color: var(--primary);
+    background-color: #6777ef;
 }
 
 /* 1.36 Activities */
@@ -1780,7 +1780,7 @@ tr:first-child > td > .fc-day-grid-event {
     top: 0;
     width: 2px;
     height: 100%;
-    background-color: var(--primary);
+    background-color: #6777ef;
 }
 
 .activities .activity:last-child:before {
@@ -1893,7 +1893,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 .empty-state .empty-state-icon {
     position: relative;
-    background-color: var(--primary);
+    background-color: #6777ef;
     width: 80px;
     height: 80px;
     line-height: 100px;
@@ -1928,12 +1928,12 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .pricing.pricing-highlight .pricing-title {
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 
 .pricing.pricing-highlight .pricing-cta a {
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 
@@ -1951,7 +1951,7 @@ tr:first-child > td > .fc-day-grid-event {
     text-transform: uppercase;
     letter-spacing: 2.5px;
     background-color: #f3f6f8;
-    color: var(--primary);
+    color: #6777ef;
     border-radius: 0 0 3px 3px;
     display: inline-block;
     padding: 5px 15px;
@@ -2066,7 +2066,7 @@ tr:first-child > td > .fc-day-grid-event {
  * Thanks to Spectre.css
  */
 .avatar {
-    background: var(--primary);
+    background: #6777ef;
     border-radius: 50%;
     color: #e3eaef;
     display: inline-block;
@@ -2204,12 +2204,12 @@ tr:first-child > td > .fc-day-grid-event {
 
 .wizard-steps .wizard-step.wizard-step-active {
     box-shadow: 0 2px 6px #acb5f6;
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 
 .wizard-steps .wizard-step.wizard-step-active:before {
-    background-color: var(--primary);
+    background-color: #6777ef;
     color: #fff;
 }
 

@@ -136,34 +136,6 @@
             }
         });
 
-        $('.search-user-select22').select2({
-            placeholder: $(this).data('placeholder'),
-            minimumInputLength: 3,
-            allowClear: true,
-            ajax: {
-                url: '/admin/users/search',
-                dataType: 'json',
-                type: "POST",
-                quietMillis: 50,
-                data: function (params) {
-                    return {
-                        term: params.term,
-                        option: $(this).attr('data-search-option'),
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.name,
-                                id: item.id
-                            }
-                        })
-                    };
-                }
-            }
-        });
-
         $('.search-webinar-select2').select2({
             placeholder: $(this).data('placeholder'),
             minimumInputLength: 3,
@@ -176,119 +148,6 @@
                 data: function (params) {
                     return {
                         term: params.term,
-                        option: $('.search-webinar-select2').attr('data-search-option'),
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.title,
-                                id: item.id
-                            }
-                        })
-                    };
-                }
-            }
-        });
-
-        $('.search-bundle-select2').select2({
-            placeholder: $(this).data('placeholder'),
-            minimumInputLength: 3,
-            allowClear: true,
-            ajax: {
-                url: '/admin/bundles/search',
-                dataType: 'json',
-                type: "POST",
-                quietMillis: 50,
-                data: function (params) {
-                    return {
-                        term: params.term,
-                        option: $('.search-bundle-select2').attr('data-search-option'),
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.title,
-                                id: item.id
-                            }
-                        })
-                    };
-                }
-            }
-        });
-
-        $('.search-forum-topic-select2').select2({
-            placeholder: $(this).data('placeholder'),
-            minimumInputLength: 3,
-            allowClear: true,
-            ajax: {
-                url: '/admin/forums/topics/search',
-                dataType: 'json',
-                type: "POST",
-                quietMillis: 50,
-                data: function (params) {
-                    return {
-                        term: params.term,
-                        option: $('.search-forum-topic-select2').attr('data-search-option'),
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.title,
-                                id: item.id
-                            }
-                        })
-                    };
-                }
-            }
-        });
-
-        $('.search-product-select2').select2({
-            placeholder: $(this).data('placeholder'),
-            minimumInputLength: 3,
-            allowClear: true,
-            ajax: {
-                url: '/admin/store/products/search',
-                dataType: 'json',
-                type: "POST",
-                quietMillis: 50,
-                data: function (params) {
-                    return {
-                        term: params.term,
-                        option: $('.search-product-select2').attr('data-search-option'),
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.title,
-                                id: item.id
-                            }
-                        })
-                    };
-                }
-            }
-        });
-
-        $('.search-category-select2').select2({
-            placeholder: $(this).data('placeholder'),
-            minimumInputLength: 3,
-            allowClear: true,
-            ajax: {
-                url: '/admin/categories/search',
-                dataType: 'json',
-                type: "POST",
-                quietMillis: 50,
-                data: function (params) {
-                    return {
-                        term: params.term,
-                        option: $('.search-category-select2').attr('data-search-option'),
                     };
                 },
                 processResults: function (data) {
@@ -349,14 +208,6 @@
             $(this).val('');
         });
 
-        const sidebar_nicescroll = $(".main-sidebar").getNiceScroll();
-        if (typeof sidebar_nicescroll !== "undefined" && sidebar_nicescroll.length) {
-            const $active = $('.nav-item.active');
-
-            if ($active && $active.length) {
-                sidebar_nicescroll.doScrollPos(0,($active.position().top - 100));
-            }
-        }
     });
 
     var lfm = function (options, cb) {
@@ -388,19 +239,16 @@
         $(".summernote").summernote({
             dialogsInBody: true,
             tabsize: 2,
-            height: $(".summernote").attr('data-height') ?? 250,
-            fontNames: [],
+            height: 250,
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
-
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
                 ['insert', ['link', 'video']],
                 ['view', ['fullscreen', 'codeview', 'help']],
                 ['popovers', ['lfm']],
-                ['paperSize',['paperSize']], // The Button
             ],
             buttons: {
                 lfm: LFMButton
@@ -422,115 +270,4 @@
             window.location.href = url;
         }
     });
-
-    if ($(".colorpickerinput").length) {
-        $(".colorpickerinput").colorpicker({
-            format: 'hex',
-            component: '.input-group-append',
-        });
-    }
-
-    $.fn.serializeObject = function () {
-        var o = {};
-        var a = this.serializeArray();
-        $.each(a, function () {
-            if (o[this.name]) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
-    };
-
-    window.serializeObjectByTag = (tagId) => {
-        var o = {};
-        var a = tagId.find('input, textarea, select').serializeArray();
-        $.each(a, function () {
-            if (o[this.name]) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
-    };
-
-    //
-    // delete sweet alert
-    $('body').on('click', '.delete-action', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const href = $(this).attr('href');
-
-        const title = $(this).attr('data-title') ?? deleteAlertHint;
-        const confirm = $(this).attr('data-confirm') ?? deleteAlertConfirm;
-
-        var html = '<div class="">\n' +
-            '    <p class="">' + title + '</p>\n' +
-            '    <div class="mt-30 d-flex align-items-center justify-content-center">\n' +
-            '        <button type="button" id="swlDelete" data-href="' + href + '" class="btn btn-sm btn-primary">' + confirm + '</button>\n' +
-            '        <button type="button" class="btn btn-sm btn-danger ml-10 close-swl">' + deleteAlertCancel + '</button>\n' +
-            '    </div>\n' +
-            '</div>';
-
-        Swal.fire({
-            title: deleteAlertTitle,
-            html: html,
-            icon: 'warning',
-            showConfirmButton: false,
-            showCancelButton: false,
-            allowOutsideClick: () => !Swal.isLoading(),
-        })
-    });
-
-    $('body').on('click', '#swlDelete', function (e) {
-        e.preventDefault();
-        var $this = $(this);
-        const href = $this.attr('data-href');
-
-        $this.addClass('loadingbar primary').prop('disabled', true);
-
-        $.get(href, function (result) {
-            if (result && result.code === 200) {
-                Swal.fire({
-                    title: (typeof result.title !== "undefined") ? result.title : deleteAlertSuccess,
-                    text: (typeof result.text !== "undefined") ? result.text : deleteAlertSuccessHint,
-                    showConfirmButton: false,
-                    icon: 'success',
-                });
-
-                if (typeof result.dont_reload === "undefined") {
-                    setTimeout(() => {
-                        if (typeof result.redirect_to !== "undefined" && result.redirect_to !== undefined && result.redirect_to !== null && result.redirect_to !== '') {
-                            window.location.href = result.redirect_to;
-                        } else {
-                            window.location.reload();
-                        }
-                    }, 1000);
-                }
-            } else {
-                Swal.fire({
-                    title: deleteAlertFail,
-                    text: deleteAlertFailHint,
-                    icon: 'error',
-                })
-            }
-        }).error(err => {
-            Swal.fire({
-                title: deleteAlertFail,
-                text: deleteAlertFailHint,
-                icon: 'error',
-            })
-        }).always(() => {
-            $this.removeClass('loadingbar primary').prop('disabled', false);
-        });
-    })
-
 })(jQuery);
