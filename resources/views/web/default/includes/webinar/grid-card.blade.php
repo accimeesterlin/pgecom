@@ -36,7 +36,6 @@
             <div class="user-inline-avatar d-flex align-items-center">
                 <div class="avatar bg-gray200">
                 </div>
-                <a href="{{ $webinar->teacher->getProfileUrl() }}" target="_blank" class="user-name ml-5 font-14">{{ $webinar->teacher->full_name }}</a>
             </div>
 
             <a href="{{ $webinar->getUrl() }}">
