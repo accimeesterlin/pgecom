@@ -35,9 +35,7 @@
         <figcaption class="webinar-card-body">
             <div class="user-inline-avatar d-flex align-items-center">
                 <div class="avatar bg-gray200">
-                    <!-- <img src="<?php echo e($webinar->teacher->getAvatar()); ?>" class="img-cover" alt="<?php echo e($webinar->teacher->full_name); ?>"> -->
                 </div>
-                <a href="<?php echo e($webinar->teacher->getProfileUrl()); ?>" target="_blank" class="user-name ml-5 font-14"><?php echo e($webinar->teacher->full_name); ?></a>
             </div>
 
             <a href="<?php echo e($webinar->getUrl()); ?>">
