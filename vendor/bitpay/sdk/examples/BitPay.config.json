@@ -1,0 +1,25 @@
+{
+  "BitPayConfiguration": {
+    "Environment": "",
+    "EnvConfig": {
+      "Test": {
+        "PrivateKeyPath": "",
+        "PrivateKeySecret": "",
+        "ApiTokens": {
+          "merchant": "",
+          "payout": ""
+        },
+        "Proxy": ""
+      },
+      "Prod": {
+        "PrivateKeyPath": "",
+        "PrivateKeySecret": "",
+        "ApiTokens": {
+          "merchant": "",
+          "payout": ""
+        },
+        "Proxy": ""
+      }
+    }
+  }
+}
