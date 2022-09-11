@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module '/home/mostafa/projects/webinar/resources/js/admin.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module '/home/rocket/projects/webinar/resources/js/admin.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })

@@ -403,7 +403,7 @@ label{
 }
 
 .nav {
-  padding-right:0 !importrant;}
+  padding-right:0 !important;}
 
 .card .card-stats .card-stats-title{
   text-align: right;}
@@ -498,7 +498,35 @@ span.input-label{
   margin: 10px 50px 10px 50px;
 }
 
-button.btn-transparent.dropdown-toggle {
-    left: 1200px;
-    position: absolute;
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    float: right;
+}
+.text-small {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+}
+.h5, h5 {
+    text-align: right;
+}
+.select2-container--default .select2-search--inline .select2-search__field {
+    text-align: right;
+}
+.card .card-body p {
+    text-align: right;
+    direction: rtl;
+}
+.modal-body {
+    direction: rtl;
+    text-align: right;
+}
+.modal-header .close {
+    display: none;
+}
+.ml-1, .mx-1 {
+    margin-right: 0.25rem!important;
+}
+.card-body .media-body .text-success {
+    float: none !important;
+    text-align: center;
 }

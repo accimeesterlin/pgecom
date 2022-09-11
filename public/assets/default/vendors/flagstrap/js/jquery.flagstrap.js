@@ -16,7 +16,7 @@
         scrollableHeight: "250px",
         placeholder: {
             value: '',
-            text: 'Please select language'
+            text: 'Change Language'
         }
     };
 
