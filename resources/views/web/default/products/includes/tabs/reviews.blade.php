@@ -114,7 +114,6 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="user-inline-avatar d-flex align-items-center mt-10">
                                 <div class="avatar bg-gray200">
-                                    <img src="{{ $review->creator->getAvatar() }}" class="img-cover" alt="">
                                 </div>
                                 <div class="d-flex flex-column ml-5">
                                     <span class="font-weight-500 text-secondary">{{ $review->creator->full_name }}</span>
