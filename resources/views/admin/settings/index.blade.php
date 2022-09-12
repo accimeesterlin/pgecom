@@ -1,50 +1,116 @@
 @extends('admin.layouts.app')
 
+
 @section('content')
+  {{--  2a633041-c63f-4d22-83cf-31dcc5d7edb3  --}}
     <section class="section">
         <div class="section-header">
-            <h1>{{ $pageTitle }}</h1>
+            <h1>{{ trans('admin/main.settings') }}</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="/admin/">{{trans('admin/main.dashboard')}}</a>
-                </div>
-                <div class="breadcrumb-item">{{ $pageTitle}}</div>
+                <div class="breadcrumb-item active"><a href="#">{{ trans('admin/main.dashboard') }}</a></div>
+                <div class="breadcrumb-item">{{ trans('admin/main.settings') }}</div>
             </div>
         </div>
 
         <div class="section-body">
+            <h2 class="section-title">{{ trans('admin/main.overview') }}</h2>
+            <p class="section-lead">
+                {{ trans('admin/main.overview_hint') }} <br/>
+              Version : 1.4
+            </p>
 
             <div class="row">
-                <div class="col-12 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-
-
-
-                            <div class="empty-state mx-auto d-block"  data-width="900" >
-                                <img class="img-fluid col-md-6" src="/assets/default/img/lic.svg" alt="image">
-                                <h3 class="mt-3">Please activate your license!</h3>
-                                <h5 class="lead">
-                                You can activate your license by <strong><a href="mailto:rocketsoftsolutions@gmail.com">contacting support</a></strong> or checking <strong><a href="https://crm.rocket-soft.org">CRM</a></strong>  </h5>                              </p>
-                              </div>
-
-
-                            
+                @can('admin_settings_general')
+                    <div class="col-lg-6">
+                        <div class="card card-large-icons">
+                            <div class="card-icon bg-primary text-white">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ trans('admin/main.general_card_title') }}</h4>
+                                <p>{{ trans('admin/main.general_card_hint') }}</p>
+                                <a href="/admin/settings/general" class="card-cta">{{ trans('admin/main.change_setting') }}<i class="fas fa-chevron-right"></i></a>
+                            </div>
                         </div>
-
-                      
-
                     </div>
-                </div>
+                @endcan
+
+                @can('admin_settings_financial')
+                    <div class="col-lg-6">
+                        <div class="card card-large-icons">
+                            <div class="card-icon bg-primary text-white">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ trans('admin/main.financial_card_title') }}</h4>
+                                <p>{{ trans('admin/main.financial_card_hint') }}</p>
+                                <a href="/admin/settings/financial" class="card-cta">{{ trans('admin/main.change_setting') }}<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endcan
+
+                @can('admin_settings_personalization')
+                    <div class="col-lg-6">
+                        <div class="card card-large-icons">
+                            <div class="card-icon bg-primary text-white">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ trans('admin/main.personalization_card_title') }}</h4>
+                                <p>{{ trans('admin/main.personalization_card_hint') }}</p>
+                                <a href="/admin/settings/personalization/page_background" class="card-cta">{{ trans('admin/main.change_setting') }}<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endcan
+
+                @can('admin_settings_notifications')
+                    <div class="col-lg-6">
+                        <div class="card card-large-icons">
+                            <div class="card-icon bg-primary text-white">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ trans('admin/main.notifications_card_title') }}</h4>
+                                <p>{{ trans('admin/main.notifications_card_hint') }}</p>
+                                <a href="/admin/settings/notifications" class="card-cta">{{ trans('admin/main.change_setting') }}<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endcan
+
+                @can('admin_settings_seo')
+                    <div class="col-lg-6">
+                        <div class="card card-large-icons">
+                            <div class="card-icon bg-primary text-white">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ trans('admin/main.seo_card_title') }}</h4>
+                                <p>{{ trans('admin/main.seo_card_hint') }}</p>
+                                <a href="/admin/settings/seo" class="card-cta">{{ trans('admin/main.change_setting') }}<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endcan
+				{{--  2a6db3  --}}
+                @can('admin_settings_customization')
+                    <div class="col-lg-6">
+                        <div class="card card-large-icons">
+                            <div class="card-icon bg-primary text-white">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ trans('admin/main.customization_card_title') }}</h4>
+                                <p>{{ trans('admin/main.customization_card_hint') }}</p>
+                                <a href="/admin/settings/customization" class="card-cta text-primary">{{ trans('admin/main.change_setting') }}<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endcan
             </div>
         </div>
     </section>
-
-
-
-
-
 @endsection
 
-@push('scripts_bottom')
-
-@endpush
