@@ -599,11 +599,11 @@
         </li>
     </ul>
 
-    @if(!empty($getPanelSidebarSettings) and !empty($getPanelSidebarSettings['background']))
+    <!-- @if(!empty($getPanelSidebarSettings) and !empty($getPanelSidebarSettings['background']))
         <div class="sidebar-create-class d-none d-md-block">
             <a href="{{ !empty($getPanelSidebarSettings['link']) ? $getPanelSidebarSettings['link'] : '' }}" class="sidebar-create-class-btn d-block text-right p-5">
                 <img src="{{ !empty($getPanelSidebarSettings['background']) ? $getPanelSidebarSettings['background'] : '' }}" alt="">
             </a>
         </div>
-    @endif
+    @endif -->
 </div>
