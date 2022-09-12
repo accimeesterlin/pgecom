@@ -7,7 +7,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="/admin/">{{trans('admin/main.dashboard')}}</a>
                 </div>
-                <div class="breadcrumb-item">{{ $pageTitle}}</div>
+                <div class="breadcrumb-item">{{ $pageTitle }}</div>
             </div>
         </div>
 
@@ -16,34 +16,55 @@
             <div class="row">
                 <div class="col-12 col-md-12">
                     <div class="card">
+
                         <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped font-14">
+                                    <tr>
+                                        <th>{{ trans('admin/main.icon') }}</th>
+                                        <th>{{ trans('public.topic') }}</th>
+                                        <th class="text-center">{{ trans('public.date') }}</th>
+                                        <th>{{ trans('admin/main.actions') }}</th>
+                                    </tr>
 
+                                    @foreach($featuredTopics as $feature)
 
+                                        <tr>
+                                            <td>
+                                                <img src="{{ $feature->icon }}" alt="" width="48" height="48" class="">
+                                            </td>
 
-                            <div class="empty-state mx-auto d-block"  data-width="900" >
-                                <img class="img-fluid col-md-6" src="/assets/default/img/plugin.svg" alt="image">
-                                <h3 class="mt-3">This is a paid plugin!</h3>
-                                <h5 class="lead">
-                                    You can purchase it by <strong><a href="https://codecanyon.net/item/universal-plugins-bundle-for-rocket-lms/33297004">this link</a></strong> on Codecanyon.
-                                </h5>             
-                              </div>
+                                            <td class="text-center">{{ $feature->topic->title }}</td>
 
+                                            <td class="text-center">{{ dateTimeFormat($feature->created_at, 'j M Y | H:i') }}</td>
 
-                            
+                                            <td width="150">
+
+                                                @can('admin_featured_topics_edit')
+                                                    <a href="/admin/featured-topics/{{ $feature->id }}/edit" class="btn-sm" data-toggle="tooltip" data-placement="top" title="{{ trans('admin/main.edit') }}">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                @endcan
+
+                                                @can('admin_featured_topics_delete')
+                                                    @include('admin.includes.delete_button',['url' => '/admin/featured-topics/'. $feature->id .'/delete','btnClass' => 'btn-sm','icon' => true])
+                                                @endcan
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                </table>
+                            </div>
                         </div>
 
-                      
-
+                        <div class="card-footer text-center">
+                            {{ $featuredTopics->appends(request()->input())->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
 @endsection
 
 @push('scripts_bottom')
