@@ -12,7 +12,7 @@
  */
 $latestLaravelVersion = '8.0';
 
-$laravelVersion = (array_key_exists($_GET['v'])) ? (string)$_GET['v'] : $latestLaravelVersion;
+$laravelVersion = (isset($_GET['v'])) ? (string)$_GET['v'] : $latestLaravelVersion;
 
 if (!in_array($laravelVersion, array('4.2', '5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '6.0', '7.0'))) {
     $laravelVersion = $latestLaravelVersion;
@@ -387,7 +387,7 @@ if (function_exists('apache_get_modules')) {
         <p>Mcrypt PHP Extension <?php echo $requirements['mcrypt_enabled'] ? $strOk : $strFail; ?></p>
     <?php endif ?>
 
-    <?php if (array_key_exists($reqList[$laravelVersion]['bcmath']) && $reqList[$laravelVersion]['bcmath']) : ?>
+    <?php if (isset($reqList[$laravelVersion]['bcmath']) && $reqList[$laravelVersion]['bcmath']) : ?>
         <p>BCmath PHP Extension <?php echo $requirements['bcmath_enabled'] ? $strOk : $strFail; ?></p>
     <?php endif ?>
 
