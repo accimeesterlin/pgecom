@@ -7,9 +7,9 @@ npm-debug.log
 # public/storage
 public/hot
 storage/*.key
-storage/cache
-storage/testing
-storage/views
+storage/cache/*
+storage/testing/*
+storage/views/*
 .env.*.php
 .env.php
 .env
