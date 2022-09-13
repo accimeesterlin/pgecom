@@ -322,7 +322,7 @@ class UserController extends Controller
 
     public function createImage($user, $img)
     {
-        $folderPath = "/" . $user->id . '/avatar/';
+        $folderPath = $user->id . '/avatar/';
 
         $image_parts = explode(";base64,", $img);
         $image_type_aux = explode("image/", $image_parts[0]);
