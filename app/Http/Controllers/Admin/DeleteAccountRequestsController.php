@@ -60,7 +60,7 @@ class DeleteAccountRequestsController extends Controller
         if (!empty($user)) {
             $user->delete();
 
-            Storage::disk('public')->deleteDirectory($user->id);
+            Storage::disk('s3')->deleteDirectory($user->id);
 
             $request->delete();
         }

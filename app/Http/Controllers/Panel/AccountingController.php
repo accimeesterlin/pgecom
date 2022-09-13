@@ -197,7 +197,7 @@ class AccountingController extends Controller
 
     private function handleUploadAttachment($user, $file)
     {
-        $storage = Storage::disk('public');
+        $storage = Storage::disk('s3');
 
         $path = '/' . $user->id . '/offlinePayments';
 
