@@ -330,7 +330,7 @@ class UserController extends Controller
         $image_base64 = base64_decode($image_parts[1]);
         $file = uniqid() . '.' . $image_type;
 
-        Storage::disk('s3')->put($folderPath . $file, $image_base64);
+        Storage::disk('s3')->put($folderPath . $file, $image_base64, 'public');
 
         return Storage::disk('s3')->url($folderPath . $file);
     }

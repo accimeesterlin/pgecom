@@ -169,7 +169,7 @@ class FileController extends Controller
         $interactiveType = $data['interactive_type'] ?? null;
         $interactiveFileName = $data['interactive_file_name'] ?? null;
 
-        $storage = Storage::disk('public');
+        $storage = Storage::disk('s3');
         $user = auth()->user();
 
         $fileInfo = $this->fileInfo($path);
@@ -377,7 +377,7 @@ class FileController extends Controller
         try {
             $fileName = time() . $file->getClientOriginalName();
 
-            $storage = Storage::disk('minio');
+            $storage = Storage::disk('s3');
 
             if (!$storage->exists($path)) {
                 $storage->makeDirectory($path);
