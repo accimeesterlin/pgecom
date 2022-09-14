@@ -11,6 +11,7 @@ use App\Models\Faq;
 use App\Models\File;
 use App\Models\Prerequisite;
 use App\Models\Quiz;
+use App\Models\Setting;
 use App\Models\Role;
 use App\Models\Sale;
 use App\Models\Session;
