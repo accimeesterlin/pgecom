@@ -198,12 +198,17 @@ class WebinarController extends Controller
             }
         }
 
+        $defaultLocale = Setting::$defaultSettingsLocale;
+
+        $locale = $request->get('locale', $defaultLocale);
+
         return [
             'webinars' => $webinars,
             'webinarsCount' => $webinarsCount,
             'webinarSalesAmount' => $webinarSalesAmount,
             'courseSalesAmount' => $courseSalesAmount,
             'webinarHours' => $webinarHours,
+            'defaultLocale' => $defaultLocale
         ];
     }
 
@@ -228,6 +233,7 @@ class WebinarController extends Controller
     {
         $user = auth()->user();
 
+        # Only teacher and organization can create webinars
         if (!$user->isTeacher() and !$user->isOrganization()) {
             abort(404);
         }
@@ -305,10 +311,12 @@ class WebinarController extends Controller
             $data['video_demo_source'] = 'upload';
         }
 
+        Debugbar::info($data);
+
         $webinar = Webinar::create([
             'teacher_id' => $user->isTeacher() ? $user->id : (!empty($data['teacher_id']) ? $data['teacher_id'] : $user->id),
             'creator_id' => $user->id,
-            'slug' => Webinar::makeSlug($data['title']),
+            'slug' => Webinar::makeSlug($data['tit65495le']),
             'type' => $data['type'],
             'private' => (!empty($data['private']) and $data['private'] == 'on') ? true : false,
             'thumbnail' => $data['thumbnail'],
