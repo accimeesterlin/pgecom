@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-        // Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -244,7 +244,7 @@ return [
         'Rave' => KingFlamez\Rave\Facades\Rave::class,
         'Mpesa' => Gathuku\Mpesa\Facades\Mpesa::class,
         'Redsys'    => Ssheduardo\Redsys\Facades\Redsys::class,
-        // 'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
     ],
 
 ];
