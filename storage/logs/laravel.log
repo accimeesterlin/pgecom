@@ -3087,3 +3087,15 @@ Did you mean this?
 #10 /Users/esterlingaccime/Desktop/projects/learning/pgecom/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #11 {main}
 "} 
+[2022-09-15 05:50:54] local.ERROR: Class "Barryvdh\Debugbar\ServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Barryvdh\\Debugbar\\ServiceProvider\" not found at /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Barryvdh\\\\Debugb...')
+#1 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(659): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Users/esterlingaccime/Desktop/projects/learning/pgecom/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /Users/esterlingaccime/Desktop/projects/learning/pgecom/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
