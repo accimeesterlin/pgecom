@@ -3,7 +3,7 @@
         'name' => 'pgecom/pgecom',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f3cd652a7a33b43ba26b22528819ec29ba81cbdd',
+        'reference' => '407a953fcf608710a01913e980da84eb121cd2bd',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1210,7 +1210,7 @@
         'pgecom/pgecom' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f3cd652a7a33b43ba26b22528819ec29ba81cbdd',
+            'reference' => '407a953fcf608710a01913e980da84eb121cd2bd',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
