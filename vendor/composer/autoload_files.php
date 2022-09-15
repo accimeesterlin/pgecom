@@ -43,6 +43,7 @@ return array(
     'dc1275c308c5b416beb314b6317daca2' => $vendorDir . '/overtrue/pinyin/src/const.php',
     '801c31d8ed748cfa537fa45402288c95' => $vendorDir . '/psy/psysh/src/functions.php',
     '941748b3c8cae4466c827dfb5ca9602a' => $vendorDir . '/rmccue/requests/library/Deprecated.php',
+    '4a1f389d6ce373bda9e57857d3b61c84' => $vendorDir . '/barryvdh/laravel-debugbar/src/helpers.php',
     'ed962a97bd972bc82007176b647d4e36' => $vendorDir . '/facade/ignition/src/helpers.php',
     '65966401fe9011225a1878c3ea034262' => $vendorDir . '/instamojo/instamojo-php/src/Utilities.php',
     '61f48ed93c7f753d874d5c00db0ab1c6' => $vendorDir . '/joisarjignesh/bigbluebutton/src/helpers.php',
