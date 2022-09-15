@@ -6,10 +6,6 @@ npm-debug.log
 # Laravel 5 & Lumen specific
 # public/storage
 public/hot
-storage/*.key
-storage/cache/*
-storage/testing/*
-storage/views/*
 .env.*.php
 .env.php
 .env
