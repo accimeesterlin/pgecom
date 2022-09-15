@@ -99,91 +99,36 @@
                 <div class="form-group">
                     <label class="input-label"><?php echo e(trans('admin/main.fav_icon')); ?></label>
                     <div class="input-group">
-                        
-                        <div class="input-group">
-                            <input type="file" name="favicon" id="favicon" class="form-control <?php $__errorArgs = ['favicon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"/>
-                            <?php $__errorArgs = ['favicon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <div class="invalid-feedback">
-                                <?php echo e($message); ?>
-
-                            </div>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                        <div class="input-group-prepend">
+                            <button type="button" class="input-group-text admin-file-manager" data-input="fav_icon" data-preview="holder">
+                                <i class="fa fa-upload"></i>
+                            </button>
                         </div>
-                        
+                        <input type="text" name="value[fav_icon]" id="fav_icon" value="<?php echo e((!empty($itemValue) and !empty($itemValue['fav_icon'])) ? $itemValue['fav_icon'] : old('fav_icon')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.fav_icon_placeholder')); ?>"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="input-label"><?php echo e(trans('admin/main.logo')); ?></label>
                     <div class="input-group">
-                        <div class="input-group">
-                            <input type="file" name="favicon" id="favicon" class="form-control <?php $__errorArgs = ['favicon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"/>
-                            <?php $__errorArgs = ['favicon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <div class="invalid-feedback">
-                                <?php echo e($message); ?>
-
-                            </div>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                        <div class="input-group-prepend">
+                            <button type="button" class="input-group-text admin-file-manager" data-input="logo" data-preview="holder">
+                                <i class="fa fa-upload"></i>
+                            </button>
                         </div>
-                        
+                        <input type="text" name="value[logo]" id="logo" value="<?php echo e((!empty($itemValue) and !empty($itemValue['logo'])) ? $itemValue['logo'] : old('logo')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.logo_placeholder')); ?>"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="input-label"><?php echo e(trans('admin/main.footer_logo')); ?></label>
                     <div class="input-group">
-                        <div class="input-group">
-                            <input type="file" name="favicon" id="favicon" class="form-control <?php $__errorArgs = ['favicon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"/>
-                            <?php $__errorArgs = ['favicon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <div class="invalid-feedback">
-                                <?php echo e($message); ?>
-
-                            </div>
-                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                        <div class="input-group-prepend">
+                            <button type="button" class="input-group-text admin-file-manager" data-input="footer_logo" data-preview="holder">
+                                <i class="fa fa-upload"></i>
+                            </button>
                         </div>
-                        
+                        <input type="text" name="value[footer_logo]" id="footer_logo" value="<?php echo e((!empty($itemValue) and !empty($itemValue['footer_logo'])) ? $itemValue['footer_logo'] : old('footer_logo')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.footer_logo_placeholder')); ?>"/>
                     </div>
                 </div>
 
