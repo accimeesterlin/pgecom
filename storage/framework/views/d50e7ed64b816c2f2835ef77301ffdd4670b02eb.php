@@ -96,6 +96,8 @@
                     <div class="text-muted text-small mt-1"><?php echo e(trans('admin/main.rtl_languages_hint')); ?></div>
                 </div>
 
+
+                
                 <div class="form-group">
                     <label class="input-label"><?php echo e(trans('admin/main.fav_icon')); ?></label>
                     <div class="input-group">
@@ -104,7 +106,7 @@
                                 <i class="fa fa-upload"></i>
                             </button>
                         </div>
-                        <input type="text" name="value[fav_icon]" id="fav_icon" value="<?php echo e((!empty($itemValue) and !empty($itemValue['fav_icon'])) ? $itemValue['fav_icon'] : old('fav_icon')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.fav_icon_placeholder')); ?>"/>
+                        <input type="file" name="value[fav_icon]" id="fav_icon" value="<?php echo e((!empty($itemValue) and !empty($itemValue['fav_icon'])) ? $itemValue['fav_icon'] : old('fav_icon')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.fav_icon_placeholder')); ?>"/>
                     </div>
                 </div>
 
@@ -116,7 +118,7 @@
                                 <i class="fa fa-upload"></i>
                             </button>
                         </div>
-                        <input type="text" name="value[logo]" id="logo" value="<?php echo e((!empty($itemValue) and !empty($itemValue['logo'])) ? $itemValue['logo'] : old('logo')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.logo_placeholder')); ?>"/>
+                        <input type="file" name="value[logo]" id="logo" value="<?php echo e((!empty($itemValue) and !empty($itemValue['logo'])) ? $itemValue['logo'] : old('logo')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.logo_placeholder')); ?>"/>
                     </div>
                 </div>
 
@@ -128,7 +130,7 @@
                                 <i class="fa fa-upload"></i>
                             </button>
                         </div>
-                        <input type="text" name="value[footer_logo]" id="footer_logo" value="<?php echo e((!empty($itemValue) and !empty($itemValue['footer_logo'])) ? $itemValue['footer_logo'] : old('footer_logo')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.footer_logo_placeholder')); ?>"/>
+                        <input type="file" name="value[footer_logo]" id="footer_logo" value="<?php echo e((!empty($itemValue) and !empty($itemValue['footer_logo'])) ? $itemValue['footer_logo'] : old('footer_logo')); ?>" class="form-control" placeholder="<?php echo e(trans('admin/main.footer_logo_placeholder')); ?>"/>
                     </div>
                 </div>
 

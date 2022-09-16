@@ -10,6 +10,8 @@ use App\Models\Setting;
 use App\Models\Translation\SettingTranslation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Barryvdh\Debugbar\Facade as Debugbar;
+
 
 class SettingsController extends Controller
 {
@@ -33,6 +35,8 @@ class SettingsController extends Controller
         removeContentLocale();
 
         $this->authorize('admin_settings_' . $page);
+
+        Debugbar::error("Hi");
 
         $settings = Setting::where('page', $page)
             ->get()

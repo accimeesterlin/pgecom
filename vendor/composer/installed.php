@@ -3,7 +3,7 @@
         'name' => 'pgecom/pgecom',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5df5dc0834bf04fa4435a69ef9f997e4030748a6',
+        'reference' => '7be9b2a200ad237046a49c82795e182a1c7b2da5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -80,7 +80,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../barryvdh/laravel-debugbar',
             'aliases' => array(),
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'bitpay/key-utils' => array(
             'pretty_version' => 'v1.1.0',
@@ -981,7 +981,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../maximebf/debugbar',
             'aliases' => array(),
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'melhorenvio/mercadopago-dx-php-laravel' => array(
             'pretty_version' => '1.2.6',
@@ -1210,7 +1210,7 @@
         'pgecom/pgecom' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5df5dc0834bf04fa4435a69ef9f997e4030748a6',
+            'reference' => '7be9b2a200ad237046a49c82795e182a1c7b2da5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1483,8 +1483,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

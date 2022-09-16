@@ -88,7 +88,8 @@
                         <div class="stat-icon-box student">
                             <img src="/assets/default/img/stats/student.svg" alt=""/>
                         </div>
-                        <strong class="stat-number mt-10"><?php echo e($studentsCount); ?></strong>
+                        
+                        <strong class="stat-number mt-10">25k</strong>
                         <h4 class="stat-title"><?php echo e(trans('home.happy_students')); ?></h4>
                         <p class="stat-desc mt-10"><?php echo e(trans('home.happy_students_hint')); ?></p>
                     </div>
