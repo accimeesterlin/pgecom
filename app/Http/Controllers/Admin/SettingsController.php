@@ -36,8 +36,6 @@ class SettingsController extends Controller
 
         $this->authorize('admin_settings_' . $page);
 
-        Debugbar::error("Hi");
-
         $settings = Setting::where('page', $page)
             ->get()
             ->keyBy('name');
@@ -161,6 +159,8 @@ class SettingsController extends Controller
                 cache()->forget('settings.getDefaultLocale');
             }
         }
+
+        Debugbar::error($values);
 
         return back();
     }

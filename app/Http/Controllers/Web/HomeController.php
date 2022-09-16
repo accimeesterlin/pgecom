@@ -21,12 +21,16 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Barryvdh\Debugbar\Facade as Debugbar;
+
 class HomeController extends Controller
 {
     public function index()
     {
+        Debugbar::info("Hello World!!");
         $homeSections = HomeSection::orderBy('order', 'asc')->get();
         $selectedSectionsName = $homeSections->pluck('name')->toArray();
+
 
         $featureWebinars = null;
         if (in_array(HomeSection::$featured_classes, $selectedSectionsName)) {
